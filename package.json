@@ -13,6 +13,7 @@
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
     "reaction": "^4.0.19",
+    "ungit": "^1.5.23",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
