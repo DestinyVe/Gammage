@@ -5,15 +5,23 @@ import { FiShoppingCart, FiMenu } from "react-icons/fi";
 export const Navbar = () => {
   const linkStyle = {
     listStyleType: "none",
-    color: "black",
+    color: "white",
     textDecoration: "none",
     fontSize: "16px",
     padding: "15px 5px",
   };
 
   return (
-    <div className="navbar">
-      <img className="logo" alt="logo" />
+    <div
+      className="navbar"
+      style={{
+        backgroundColor: "#222",
+        padding: "5px 20px",
+        fontFamily: "sans-serif",
+      }}>
+      <div className="logo" alt="logo">
+        Grammage
+      </div>
       <div className="menu">
         <Link className="item" style={linkStyle}>
           {" "}
