@@ -1,111 +1,151 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-.navbar {
-  font-family: sans-serif;
-  background: #222;
-  padding: 5px 20px;
-}
-
-.item:hover {
-  text-decoration: underline;
-}
-
-.logo .item {
-  font-size: 20px;
-}
-.button.secondary {
-  border-bottom: 1px #444 solid;
-}
-
-/* Mobile Menu */
-.menu {
+.NavbarItems {
+  background: #1b2735;
+  height: 80px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
+  z-index: 1;
 }
-.toggle {
-  order: 1;
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  margin-left: 20px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 10px;
+  background: white;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.item.button {
-  order: 2;
+
+.fi-react {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
 }
-.item {
-  width: 100%;
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
   text-align: center;
-  order: 3;
-  /* display:none; */
-}
-.item.active {
-  display: block;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
 }
 
-.toggle {
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.iconFiShoppingCart {
+  color: black;
 }
 
-.bars {
-  background: #999;
-  display: inline-block;
-  height: 2px;
-  position: relative;
-  width: 18px;
+.nav-links:hover {
+  background-color: #1b2735;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
 }
 
-.bars::before,
-.bars::after {
-  background: #999;
-  content: "";
-  display: inline-block;
-  height: 2px;
-  position: absolute;
-  width: 18px;
-}
-.bars::before {
-  top: 5px;
+.fa-bars {
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Tablet Menu */
+.nav-links-mobile {
+  display: none;
+}
 
-@media all and (min-width: 468px) {
-  .menu {
-    justify-content: center;
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
   }
-  .logo {
-    flex: 1;
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: -600px;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
   }
-  .item.button {
-    width: auto;
-    order: 1;
+  .nav-menu.active {
+    background: #272e36;
+    top: 80px;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 0;
+    padding: 0;
+  }
+  .nav-links {
+    display: inline-block;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-links:hover {
+    background-color: #1b2735;
+    border-radius: 0;
+  }
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+  .menu-icon {
     display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .fa-times {
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
   }
 
-  .toggle {
-    order: 2;
-  }
-  .button.secondary {
-    border: 2;
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #4ad9e4;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 250ms;
   }
 
-  .button .item {
-    padding: 7px 15px;
-    background: teal;
-    border: 1px solid #006d6d;
-    border-radius: 50em;
-  }
-  .button.secondary a {
-    background: transparent;
-  }
-  .button a:hover {
-    transition: all 0.25s;
-  }
-  .button:not(.secondary) a:hover {
-    background: #006d6d;
-    border-color: #005959;
-  }
-  .button.secondary a:hover {
-    color: #ddd;
+  Button {
+    display: none;
   }
 }
