@@ -24,7 +24,9 @@ export class Navbar extends Component {
     return (
       <nav className="NavbarItems">
         <IconContext.Provider value={{ color: "white" }}>
-          <h1 className="navbar-logo">Grammage</h1>
+          <Link className="logo-link" to="/">
+            <h1 className="navbar-logo">Grammage</h1>
+          </Link>
           <div className="menu-icon" onClick={this.handleClick}>
             {this.state.clicked ? <FiArrowUp /> : <FiMenu />}
           </div>
@@ -48,12 +50,21 @@ export class Navbar extends Component {
               <Link className="nav-links" to="/">
                 Contact
               </Link>
+              <Link className="nav-links no-btn" to="/">
+                <FiShoppingCart />
+              </Link>
+              <Link className="nav-links-btn" to="/">
+                S'inscrire
+              </Link>
             </li>
           </ul>
           <Button>
-            <FiShoppingCart />
+            <Link to="/cart">
+              <FiShoppingCart />
+            </Link>
           </Button>
-          <Button>S'inscrire</Button>
+
+          <Button className="nav-btn">S'inscrire</Button>
         </IconContext.Provider>
       </nav>
     );

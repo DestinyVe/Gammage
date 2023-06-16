@@ -9,9 +9,9 @@ export const Product = (props) => {
       <img src={productImage} alt={productName} />
       <div className="description">
         <p>
-          <b>{productName}</b>
+          <b className="productName"> {productName} </b>
         </p>
-        <p> {price}0€ </p>
+        <p> {price.toFixed(2)} € </p>
       </div>
       <button className="addToCartBttn" onClick={() => addToCart(id)}>
         Ajouter au Panier

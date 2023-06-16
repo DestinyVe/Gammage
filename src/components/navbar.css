@@ -1,6 +1,12 @@
 .NavbarItems {
   background: #1b2735;
+  position: static;
+  top: 0;
+  left: 0;
+  top: 0;
+  left: 0;
   height: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +14,9 @@
   z-index: 1;
 }
 
+.logo-link {
+  text-decoration: none;
+}
 .navbar-logo {
   color: #fff;
   justify-self: start;
@@ -15,7 +24,6 @@
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  letter-spacing: 10px;
   background: white;
   background-clip: border-box;
   -webkit-background-clip: text;
@@ -25,6 +33,9 @@
 .fi-react {
   margin-left: 0.5rem;
   font-size: 1.6rem;
+}
+.nav-links-btn {
+  display: none;
 }
 
 .nav-menu {
@@ -37,7 +48,9 @@
   justify-content: end;
   margin-right: 2rem;
 }
-
+.no-btn {
+  display: none;
+}
 .nav-links {
   color: white;
   text-decoration: none;
@@ -70,7 +83,7 @@
   display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 750px) {
   .NavbarItems {
     position: relative;
   }
@@ -79,7 +92,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    height: 550px;
     position: absolute;
     top: -600px;
     left: 0;
@@ -94,6 +107,23 @@
     transition: all 0.5s ease;
     z-index: 0;
     padding: 0;
+  }
+  .nav-links-btn {
+    display: inline-block;
+    background-color: #689fde;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-links-btn:hover {
+    background-color: #1b2735;
+    border-radius: 0;
   }
   .nav-links {
     display: inline-block;
@@ -145,7 +175,7 @@
     transition: 250ms;
   }
 
-  Button {
+  .btn {
     display: none;
   }
 }

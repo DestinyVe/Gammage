@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { PRODUCTS } from "../../products";
 import { CartItem } from "./cart-item";
@@ -13,33 +13,42 @@ export const Cart = () => {
 
   return (
     <div className="cart">
-      <div>
-        <h1>Your Cart Items</h1>
-      </div>
-      <div className="cart">
-        {PRODUCTS.map((product) => {
-          if (cartItems[product.id] !== 0) {
-            return <CartItem data={product} />;
-          }
-        })}
+      <div className="header">
+        <h3 className="heading">Votre panier</h3>
+        <h5 className="action">Supprimer tout</h5>
       </div>
 
+      {PRODUCTS.map((product) => {
+        if (cartItems[product.id] !== 0) {
+          return <CartItem data={product} />;
+        }
+      })}
+
       {totalAmount > 0 ? (
-        <div className="checkout">
-          <p> Subtotal: ${totalAmount} </p>
-          <button onClick={() => navigate("/")}> Continue Shopping </button>
+        <Fragment>
+          <hr />
+          <div className="checkout">
+            <div className="total">
+              <div className="subtotal"> Total: </div>
+            </div>
+            <div className="total-amount"> {totalAmount.toFixed(2)} €</div>
+          </div>
+          <button className="button" onClick={() => navigate("/")}>
+            {" "}
+            Continuer shopping{" "}
+          </button>
           <button
+            className="button"
             onClick={() => {
               checkout();
               navigate("/checkout");
-            }}
-          >
+            }}>
             {" "}
             Checkout{" "}
           </button>
-        </div>
+        </Fragment>
       ) : (
-        <h1> Your Shopping Cart is Empty</h1>
+        <h1> Votre panier est vide</h1>
       )}
     </div>
   );
